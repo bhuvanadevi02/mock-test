@@ -1,0 +1,88 @@
+<!--
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 mt-5 mx-auto">
+        <form (submit)="register()">
+          <h1 class="h3 mb-3 font-weight-normal">Register</h1>
+          <div class="form-group">
+            <label for="name">Username</label>
+            <input type="text" class="form-control" name="username" placeholder="Enter your username" [(ngModel)]="credentials.username">
+          </div>
+         
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="credentials.password">
+          </div>
+          <div class="form-group">
+            <label for="category">Category</label>
+            <input type="text" class="form-control" name="category" placeholder="Enter category" [(ngModel)]="credentials.category">
+          </div>
+          <div class="form-group">
+            <label for="name">Subject</label>
+            <input type="text" class="form-control" name="sub" placeholder="Enter your subject" [(ngModel)]="credentials.sub">
+          </div>
+          <button type="submit" class="btn btn-lg btn-primary btn-block">Register!</button>
+        </form>
+      </div>
+    </div>
+  </div>
+-->
+  <div class="container d-flex justify-content-center">
+    <div class="card text-white bg-primary container-width text-center">
+        <div class="card-header">
+            <h4>SIGNIN</h4>
+        </div>
+        <div class="card-body text-center">
+            <form (submit)="register()">
+                <div class="form-row mx-5">
+                    <div class="form-group">
+                        <div class="input-group input-group-lg">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="username" name="username" [(ngModel)]="credentials.username">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group input-group-lg">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-eye-slash"></i></span>
+                            </div>
+                            <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="credentials.password">
+                        </div>
+                    </div>
+                                  <div class="form-group">
+                        <div class="input-group input-group-lg">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa fa-files-o"></i></span>
+                            </div>
+                            <select class="form-control" name="category" [(ngModel)]="credentials.category">
+                                <option value="" selected disabled>Choose category</option>
+                                <option value="Institution">Institution</option>
+                                <option value="Organization">Organization</option>
+                                <option value="Others">Others</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group input-group-lg">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa fa-book"></i></span>
+                            </div>
+                            <select class="form-control" name="sub" [(ngModel)]="credentials.sub">
+                                <option value="" selected disabled>Choose subject type</option>
+                                <option value="Java">Java</option>
+                                <option value="Data Science">Data Science</option>
+                                <option value="GK">GK</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-warning float-middle px-4 pt-2 pb-2" type="submit">Signup</button>
+            </form>
+
+        </div>
+        <p>Already have an account? <a href="signin" style="color:#000">Signin</a></p>
+    </div>
+</div>

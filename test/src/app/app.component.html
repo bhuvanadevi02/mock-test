@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10" aria-controls="navbarsExample10"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">Home</a>
+      </li>
+
+      <li *ngIf="!auth.isLoggedIn()" class="nav-item">
+        <a class="nav-link" routerLink="/login">Login</a>
+      </li>
+      <li *ngIf="!auth.isLoggedIn()" class="nav-item">
+        <a class="nav-link" routerLink="/register">Register</a>
+      </li>
+     
+      <li  *ngIf="auth.isLoggedIn()" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Question
+        </a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="category">Add Category</a>
+            <a class="dropdown-item" href="subject">Add Subject</a>
+        </div>
+    </li>
+    <li  *ngIf="auth.isLoggedIn()" class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          User
+      </a>
+      <div class="dropdown-menu">
+          <a class="dropdown-item" href="approval">Approval</a>
+          <a class="dropdown-item" href="result">Result</a>
+      </div>
+  </li>
+  <li class="nav-item" *ngIf="auth.isLoggedIn()">
+      <a class="nav-link" href="report">Report</a>
+  </li>
+         <li *ngIf="auth.isLoggedIn()" class="nav-item">
+        <a class="nav-link" routerLink="/profile">{{ auth.getUserDetails()?.username }}</a>
+      </li>
+      <li *ngIf="auth.isLoggedIn()" class="nav-item">
+        <a class="nav-link" routerLink="" (click)="auth.logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
